@@ -6,7 +6,6 @@
      ========================================================== -->
 <section id="welcome">
     <div class="overlay-dark"></div>
-
     <div class="welcome-content">
         <h1>Welcome to Zaro</h1>
         <p>Where Ambition Meets Opportunity</p>
@@ -18,13 +17,12 @@
         </a>
     </div>
 </section>
-
-<div class="container">
 <!-- ==========================================================
      INTRODUCTION SECTION
      ========================================================== -->
-<section id="introduction">
-    <div class="section-container intro-flex">
+<section id="introduction" class="section-container">
+    <div class="section-inner">
+    <div class=" intro-flex">
         <div class="intro-text">
             <h2 class="py-3"> India’s Fastest-Growing Digital Brand</h2>
             <p class="py-3">ZARO is more than a brand. It is a movement created for dreamers, creators and young achievers. Built with the vision of making financial growth simple, modern and accessible, ZARO is to unlock your earning potential with digital knowledge, proven systems, and high-value learning resources.
@@ -34,61 +32,46 @@
             <img src="/static/img/zaro_logo2.png" alt="Zaro Logo">
         </div>
     </div>
+</div>
 </section>
 <!-- ==========================================================
      FOUNDERS SECTION
      ========================================================== -->
-<section id="founders">
-    <h2 class="text-center mb-4"  style="margin-left: 8%; margin-bottom: 20px;">Meet Our Founders</h2>
-
+<section id="founders" class="section-container">
+    <div class="section-inner">
+    <h2 class="text-center mb-4">Meet Our Founders</h2>
     <!-- Founder -->
     <div class="founder-box shadow-lg p-4 mb-4">
         <div class="row align-items-center g-3">
-
-            <!-- Image 20% -->
             <div class="col-3 text-center">
                 <img src="/static/img/founder.jpg" alt="Founder"
                      class="img-fluid rounded-circle founder-img">
             </div>
-
-            <!-- Text 80% -->
             <div class="col-9">
-                <h4 class="mb-1" style="color: var(--light);">ARUMUGAM (Founder)</h4>
+                <h4 class="mb-1" style="color: var(--light);">ARUMUGAM A (Founder)</h4>
                 <p class="m-0">
-                    John Doe is a visionary entrepreneur with a passion for empowering young
-                    people through digital knowledge. With 10+ years of experience in tech,
-                    he built ZARO to make modern learning accessible for everyone.
+                    A 19-year-old mechanical engineer from Thoothukudi, Arumugam is the visionary founder driving innovation and growth at ZARO with passion and determination.
                 </p>
             </div>
-
         </div>
     </div>
-
     <!-- Co-Founder -->
     <div class="founder-box shadow-lg p-4 mb-4">
         <div class="row align-items-center g-3">
-
-            <!-- Text 80% -->
             <div class="col-9">
-                <h4 class="mb-1" style="color: var(--light);">SUJITH (Co-Founder)</h4>
+                <h4 class="mb-1" style="color: var(--light);">SUJITH A (Co-Founder)</h4>
                 <p class="m-0">
-                    Jane Smith is a digital strategist focused on empowering beginners with
-                    skills and practical earning systems. She brings structure and growth
-                    strategies to ZARO.
+                    A 19-year-old mechanical engineer from Tirunelveli, Sujith is the dynamic co-founder of ZARO, contributing innovative ideas and technical expertise to drive the company forward.
                 </p>
             </div>
-
-            <!-- Image 20% -->
             <div class="col-3 text-center">
-                <img src="/static/img/cofounder.jpg" alt="Co-Founder"
+                <img src="/static/img/co-founder.jpg" alt="Co-Founder"
                      class="img-fluid rounded-circle founder-img">
             </div>
-
         </div>
     </div>
-
+    </div>
 </section>
-
 <!-- ==========================================================
      SERVICES SECTION
      ========================================================== -->
@@ -103,10 +86,8 @@
                 </div>
                 <h4 class="card-title" style="color: var(--light);">Premium Digital Products</h4>
                 <p class="card-text">E-books & guides designed to help beginners start earning online. Clear, visually premium, and results-oriented.</p>
-                
             </div>
         </div>
-
         <!-- Service 2: Zero-Earning Roadmaps -->
         <div class="col-md-4">
             <div class="card service-card p-4 shadow-lg">
@@ -115,10 +96,8 @@
                 </div>
                 <h4 class="card-title" style="color: var(--light);">Zero-Earning Roadmaps</h4>
                 <p class="card-text">Step-by-step blueprints showing how to earn online without any investment. Practical and beginner-friendly methods.</p>
-                
             </div>
         </div>
-
         <!-- Service 3: Mentorship & Support -->
         <div class="col-md-4">
             <div class="card service-card p-4 shadow-lg">
@@ -127,13 +106,8 @@
                 </div>
                 <h4 class="card-title" style="color: var(--light);">Mentorship & Support</h4>
                 <p class="card-text">Get personalized earning strategies, 1:1 support, and weekly progress checks to ensure your success.</p>
-                
             </div>
         </div>
-    </div>
-
-    <!-- Additional Services -->
-    <div class="row g-4 mt-4">
         <!-- Service 4: Legal & Compliance Support -->
         <div class="col-md-4">
             <div class="card service-card p-4 shadow-lg">
@@ -142,28 +116,25 @@
                 </div>
                 <h4 class="card-title" style="color: var(--light);">Legal & Compliance Support</h4>
                 <p class="card-text">Simplified legal guidance to keep your digital business safe and compliant with online regulations.</p>
-                
             </div>
         </div>
     </div>
 </section>
-<hr>
-<!-- COURSES -->
+<!-- ==========================================================
+     COURSE SECTION
+     ========================================================== -->
 <section class="py-5 section-container" id="courses">
     <h2 class="text-center mb-4">COURSES</h2>
     <div class="row g-4">
         {% for c in courses %}
         <div class="col-md-4 fade-in-course">
             <div class="card course-card">
-
                 {% if c.thumbnail %}
                 <img src="{{ c.thumbnail.url }}" alt="{{ c.title }} Thumbnail">
                 {% endif %}
-
                 <div class="card-body">
                     <h4>{{ c.title }}</h4>
                     <p>{{ c.short_description }}</p>
-
                     <a href="/courses/{{ c.slug }}/"class="button">
                         View Courses
                         <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -171,20 +142,16 @@
                         </svg>
                     </a>
                 </div>
-
             </div>
         </div>
         {% endfor %}
     </div>
 </section>
-
-</div>
 <!-- ==========================================================
      ABOUT SECTION
      ========================================================== -->
-<section id="about">
+<section id="about" class="section-container">
     <div class="overlay-dark"></div>
-
     <div class="content-box">
         <h2>ABOUT ZARO</h2>
         <p>
@@ -196,33 +163,23 @@
         </p>
     </div>
 </section>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const content = document.querySelector("#welcome .welcome-content");
-
-    // Fade in on load
     setTimeout(() => content.classList.add("visible"), 200);
-
-    // Observer to fade OUT as welcome section leaves viewport
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
-                // entry.intersectionRatio = how much of #welcome is on screen
                 if (entry.intersectionRatio < 0.5) {
-                    // Less than 50% visible → fade out
                     content.classList.add("fade-out");
                 } else {
-                    // More than 50% visible → fade in
                     content.classList.remove("fade-out");
                 }
             });
         },
-        { threshold: [0, 0.5, 1] }  // trigger at 0%, 50%, 100%
+        { threshold: [0, 0.5, 1] }
     );
-
     observer.observe(document.querySelector("#welcome"));
 });
 </script>
-
 {% endblock %}

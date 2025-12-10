@@ -1,6 +1,9 @@
 /* ============================================================
    ROOT VARIABLES & GLOBAL
 ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 :root {
     --bg: #1B211A;
     --accent: #628141;
@@ -21,6 +24,7 @@ a {
 html, body {
     width: 100%;
     height: 100%;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 body {
@@ -36,7 +40,14 @@ h1,h2,h3,h4,h5,p{
     padding-right: 5%; 
     width: 100%; 
     max-width: 100%; 
-    margin: 4%; 
+    margin: 4% auto; 
+}
+.section-container * {
+    box-sizing: border-box;
+}
+.section-inner {
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* ============================================================
@@ -89,6 +100,10 @@ h1,h2,h3,h4,h5,p{
 
 .nav-link:hover{
   color: var(--light) !important;;
+}
+
+#mainNav.scrolled .nav-link:hover {
+    color: var(--light) !important;
 }
 
 hr{
@@ -264,17 +279,44 @@ hr{
     color: var(--light);
     border-radius: 14px;
     transition: 0.3s ease;
-    padding-left: 6%; 
-    padding-right: 5% ;
-    margin-left: 8%;
+    padding: 30px;
+    margin: 20px 0;
 }
 
 .founder-img {
-    width: 100%;            /* responsive */
-    max-width: 110px;       /* fixed size */
-    height: 110px;
+    width: 100%;           
+    max-width: 140px;      
+    height: 140px;
     object-fit: cover;
     border: 3px solid #fff;
+}
+/* ============================================================
+   Equal Height Cards for Services & Courses
+============================================================ */
+
+.row.g-4 > .col-md-4 {
+    display: flex;
+}
+
+.row.g-4 > .col-md-4 .service-card,
+.row.g-4 > .col-md-4 .course-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4 > .col-md-4 .service-card .card-body,
+.row.g-4 > .col-md-4 .course-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card img {
+    flex-shrink: 0; 
+    width: 100%;
+    height: auto;  
 }
 
 /* ============================================================
@@ -293,6 +335,9 @@ hr{
     padding: 20px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 5px 15px rgba(139, 174, 102, 0.25);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .service-icon {
@@ -318,8 +363,17 @@ hr{
     border: 3px solid var(--accent2);
     border-radius: 14px;
     box-shadow: 0px 5px 15px rgba(139, 174, 102, 0.25);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
+.course-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .course-card img {
     width: 100%;
     height: 230px;
@@ -335,7 +389,6 @@ hr{
     background-image: url('/static/img/img2.jpg');
     background-size: cover;
     background-attachment: fixed;
-
     position: relative;
     display: flex;
     justify-content: center;
@@ -382,9 +435,14 @@ hr{
    FOOTER
 ============================================================ */
 footer { 
-  padding: 30px 0; 
+  padding:0; 
   color: var(--light); 
   margin-top: 0;
+  max-width: 100%;  
+  padding-left: 20px;
+}
+.footer-left{
+    margin-right:auto;
 }
 
 .footer-section {
@@ -411,7 +469,6 @@ footer {
 
 .footer-links a:hover { color: var(--accent2); }
 
-/* Contact Card */
 .contact-card {
     background: rgba(255,255,255,0.08);
     padding: 30px;
@@ -419,7 +476,8 @@ footer {
     border: 1px solid rgba(255,255,255,0.12);
     backdrop-filter: blur(8px);
     max-width: 380px;
-    margin-left: auto;
+    margin-top: 20px;
+    padding-left: 20px;
 }
 
 .social-icons a {
