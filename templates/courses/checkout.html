@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Checkout - {{ course.title }}{% endblock %}
+{% block content %}
+<h3>Checkout for: {{ course.title }}</h3>
+<p>Amount: ₹{{ order['amount']/100 }}</p>
+<button id="rzpayBtn" class="btn btn-primary">Pay with Razorpay</button>
+{% endblock %}
+{% block scripts %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('rzpayBtn').addEventListener('click', function(){
+  var options = {
+    "key": "{{ razorpay_key }}",
+    "amount": {{ order['amount'] }},
+    "currency": "INR",
+    "order_id": "{{ order['id'] }}",
+    "handler": function (response){
+        // send to server
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','/courses/payment/success/');
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xhr.onload = function(){ window.location = '/courses/{{ course.slug }}/content/'; };
+        xhr.send('razorpay_payment_id='+response.razorpay_payment_id+'&razorpay_order_id='+response.razorpay_order_id);
+    }
+  };
+  var rzp = new Razorpay(options);
+  rzp.open();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ course.title }} - Content{% endblock %}
+{% block content %}
+<h1>{{ course.title }}</h1>
+<p>Download the PDF: {% if course.pdf %}<a href="{{ course.pdf.url }}" class="btn btn-outline-light">Download PDF</a>{% else %}No PDF{% endif %}</p>
+<div class="mt-3">
+  {% for module in course.modules.all %}
+    <h4>{{ module.title }}</h4>
+    <ul>
+    {% for lesson in module.lessons.all %}
+      <li>{{ lesson.title }} {% if lesson.video_url %}- <a href="{{ lesson.video_url }}" target="_blank">Watch</a>{% endif %}</li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<!-- ==========================================================
+     HERO SECTION
+     ========================================================== -->
+<section id="welcome">
+    <div class="overlay-dark"></div>
+
+    <div class="welcome-content">
+        <h1>Welcome to Zaro</h1>
+        <p>Where Ambition Meets Opportunity</p>
+        <a href="#courses" class="button">
+            Explore Courses
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<div class="container">
+<!-- ==========================================================
+     INTRODUCTION SECTION
+     ========================================================== -->
+<section id="introduction">
+    <div class="section-container intro-flex">
+        <div class="intro-text">
+            <h2 class="py-3"> India’s Fastest-Growing Digital Brand</h2>
+            <p class="py-3">ZARO is more than a brand. It is a movement created for dreamers, creators and young achievers. Built with the vision of making financial growth simple, modern and accessible, ZARO is to unlock your earning potential with digital knowledge, proven systems, and high-value learning resources.
+</p>
+        </div>
+        <div class="intro-image">
+            <img src="/static/img/zaro_logo2.png" alt="Zaro Logo">
+        </div>
+    </div>
+</section>
+<!-- ==========================================================
+     FOUNDERS SECTION
+     ========================================================== -->
+<section id="founders">
+    <h2 class="text-center mb-4"  style="margin-left: 8%; margin-bottom: 20px;">Meet Our Founders</h2>
+
+    <!-- Founder -->
+    <div class="founder-box shadow-lg p-4 mb-4">
+        <div class="row align-items-center g-3">
+
+            <!-- Image 20% -->
+            <div class="col-3 text-center">
+                <img src="/static/img/founder.jpg" alt="Founder"
+                     class="img-fluid rounded-circle founder-img">
+            </div>
+
+            <!-- Text 80% -->
+            <div class="col-9">
+                <h4 class="mb-1" style="color: var(--light);">ARUMUGAM (Founder)</h4>
+                <p class="m-0">
+                    John Doe is a visionary entrepreneur with a passion for empowering young
+                    people through digital knowledge. With 10+ years of experience in tech,
+                    he built ZARO to make modern learning accessible for everyone.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Co-Founder -->
+    <div class="founder-box shadow-lg p-4 mb-4">
+        <div class="row align-items-center g-3">
+
+            <!-- Text 80% -->
+            <div class="col-9">
+                <h4 class="mb-1" style="color: var(--light);">SUJITH (Co-Founder)</h4>
+                <p class="m-0">
+                    Jane Smith is a digital strategist focused on empowering beginners with
+                    skills and practical earning systems. She brings structure and growth
+                    strategies to ZARO.
+                </p>
+            </div>
+
+            <!-- Image 20% -->
+            <div class="col-3 text-center">
+                <img src="/static/img/cofounder.jpg" alt="Co-Founder"
+                     class="img-fluid rounded-circle founder-img">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     SERVICES SECTION
+     ========================================================== -->
+<section class="py-5 section-container" id="services">
+    <h2 class="text-center mb-5">OUR SERVICES</h2>
+    <div class="row g-4">
+        <!-- Service 1: Premium Digital Products -->
+        <div class="col-md-4">
+            <div class="card service-card p-4 shadow-lg">
+                <div class="service-icon mb-3">
+                    <i class="fas fa-book-open fa-3x text-primary"></i> <!-- Add your preferred icon here -->
+                </div>
+                <h4 class="card-title" style="color: var(--light);">Premium Digital Products</h4>
+                <p class="card-text">E-books & guides designed to help beginners start earning online. Clear, visually premium, and results-oriented.</p>
+                
+            </div>
+        </div>
+
+        <!-- Service 2: Zero-Earning Roadmaps -->
+        <div class="col-md-4">
+            <div class="card service-card p-4 shadow-lg">
+                <div class="service-icon mb-3">
+                    <i class="fas fa-map-signs fa-3x text-warning"></i> <!-- Icon for Roadmaps -->
+                </div>
+                <h4 class="card-title" style="color: var(--light);">Zero-Earning Roadmaps</h4>
+                <p class="card-text">Step-by-step blueprints showing how to earn online without any investment. Practical and beginner-friendly methods.</p>
+                
+            </div>
+        </div>
+
+        <!-- Service 3: Mentorship & Support -->
+        <div class="col-md-4">
+            <div class="card service-card p-4 shadow-lg">
+                <div class="service-icon mb-3">
+                    <i class="fas fa-chalkboard-teacher fa-3x text-success"></i> <!-- Mentorship Icon -->
+                </div>
+                <h4 class="card-title" style="color: var(--light);">Mentorship & Support</h4>
+                <p class="card-text">Get personalized earning strategies, 1:1 support, and weekly progress checks to ensure your success.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Services -->
+    <div class="row g-4 mt-4">
+        <!-- Service 4: Legal & Compliance Support -->
+        <div class="col-md-4">
+            <div class="card service-card p-4 shadow-lg">
+                <div class="service-icon mb-3">
+                    <i class="fas fa-gavel fa-3x text-danger"></i> <!-- Legal Icon -->
+                </div>
+                <h4 class="card-title" style="color: var(--light);">Legal & Compliance Support</h4>
+                <p class="card-text">Simplified legal guidance to keep your digital business safe and compliant with online regulations.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<!-- COURSES -->
+<section class="py-5 section-container" id="courses">
+    <h2 class="text-center mb-4">COURSES</h2>
+    <div class="row g-4">
+        {% for c in courses %}
+        <div class="col-md-4 fade-in-course">
+            <div class="card course-card">
+
+                {% if c.thumbnail %}
+                <img src="{{ c.thumbnail.url }}" alt="{{ c.title }} Thumbnail">
+                {% endif %}
+
+                <div class="card-body">
+                    <h4>{{ c.title }}</h4>
+                    <p>{{ c.short_description }}</p>
+
+                    <a href="/courses/{{ c.slug }}/"class="button">
+                        View Courses
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+</div>
+<!-- ==========================================================
+     ABOUT SECTION
+     ========================================================== -->
+<section id="about">
+    <div class="overlay-dark"></div>
+
+    <div class="content-box">
+        <h2>ABOUT ZARO</h2>
+        <p>
+            ZARO is India’s fastest-growing digital brand — empowering young achievers 
+            with modern skills, clear guidance, and practical zero-investment earning 
+            strategies. Built for dreamers and doers, ZARO delivers premium content, 
+            proven systems, and future-ready learning designed to help beginners grow 
+            with confidence and real results.
+        </p>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const content = document.querySelector("#welcome .welcome-content");
+
+    // Fade in on load
+    setTimeout(() => content.classList.add("visible"), 200);
+
+    // Observer to fade OUT as welcome section leaves viewport
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                // entry.intersectionRatio = how much of #welcome is on screen
+                if (entry.intersectionRatio < 0.5) {
+                    // Less than 50% visible → fade out
+                    content.classList.add("fade-out");
+                } else {
+                    // More than 50% visible → fade in
+                    content.classList.remove("fade-out");
+                }
+            });
+        },
+        { threshold: [0, 0.5, 1] }  // trigger at 0%, 50%, 100%
+    );
+
+    observer.observe(document.querySelector("#welcome"));
+});
+</script>
+
+{% endblock %}

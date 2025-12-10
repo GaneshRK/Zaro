@@ -1,0 +1,141 @@
+  {% load static %}
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zaro - {% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  </head>
+  <body class="dark-theme">
+<!-- ==========================================================
+     NAVBAR
+     ========================================================== -->
+  <div class="fixed-top navbar-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark mx-auto" id="mainNav">
+      <div class="container px-4 d-flex">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold fs-4" href="/">ZARO</a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <ul class="navbar-nav align-items-center me-3">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login / Register</a></li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<!-- ==========================================================
+     CONTENT 
+     ========================================================== -->
+  <div class="container" style="margin: 0; padding: 0;">
+    {% block content %}{% endblock %}
+  </div>
+<!-- ==========================================================
+     FOOTER 
+     ========================================================== -->
+  <footer class="footer-section" id="contact">
+      <div class="container">
+          <div class="row align-items-start">
+
+              <!-- LEFT COLUMN (CONTENT)-->
+              <div class="col-md-6 footer-left">
+                  <h3 class="footer-logo">ZARO</h3>
+                  <p class="footer-desc">
+                      India’s fastest-growing digital brand empowering young achievers 
+                      with clarity, digital skills, and practical income opportunities.
+                  </p>
+                  <p class="footer-desc">
+                      This website is developed by Mr.R.Ramganesh (Senior Web Developer)
+                  </p>
+                  <h5 class="footer-head">Follow Us</h5>
+                  <div class="social-icons">
+                      <a href="https://www.instagram.com/zaro_777_?igsh=MWFnMnEzanJnN2hjNQ=="><i class="bi bi-instagram"></i></a>
+                      <a href="https://wa.me/919092510906"><i class="bi bi-whatsapp"></i></a>
+                      <a href="https://www.linkedin.com/in/tamil-selvi-tamil-selvi-764130339/"><i class="bi bi-linkedin"></i></a>
+                  </div>
+              </div>
+
+              <!-- RIGHT COLUMN (CONTACT BOX) -->
+              <div class="col-md-6 footer-right">
+                  <div class="contact-card">
+                      <h4>Contact Us</h4>
+                      <p class="contact-text">We’re here to help and answer your questions.</p>
+
+                      <p class="contact-item"><strong>Email:</strong> zaro.education.gmail.com</p>
+                      <a href="mailto:hi@zaro.example"class="button">
+                          Send Message
+                          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <p class="text-center footer-copy mt-4">© 2025 ZARO. All rights reserved.</p>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/site.js"></script>
+
+  {% block scripts %}{% endblock %}
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.getElementById("mainNav");
+
+      function updateNav() {
+          if (window.scrollY > 60) {
+              nav.classList.add("scrolled");
+          } else {
+              nav.classList.remove("scrolled");
+          }
+      }
+
+      setTimeout(updateNav, 50);  // <-- add this
+      window.addEventListener("scroll", updateNav);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+      const navMenu = document.getElementById("navMenu");
+      const navLinks = navMenu.querySelectorAll("a");
+
+      navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+
+              // Only close for internal scrolling links (starting with #)
+              if (link.getAttribute("href").startsWith("#")) {
+                  const bsCollapse = bootstrap.Collapse.getInstance(navMenu) 
+                      || new bootstrap.Collapse(navMenu, { toggle: false });
+
+                  bsCollapse.hide();
+              }
+
+          });
+      });
+  });
+  </script>
+
+
+
+  </body>
+  </html>
